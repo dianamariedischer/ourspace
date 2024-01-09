@@ -71,13 +71,20 @@ Apartment.init(
         key: 'id',
       },
     },
+    apartment_collection_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'apartment',
+        key: 'id',
+      },
+  },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'apartment',
   }
 );
 
