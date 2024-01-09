@@ -15,8 +15,9 @@ const seedDatabase = async () => {
 
   for (const project of projectData) {
     await Project.create({
-      ...project,
+      ...project, // copies all key-value pairs to new data record
       user_id: users[Math.floor(Math.random() * users.length)].id,
+      // user_id: users[0].id,$ $
     });
   }
 
