@@ -32,7 +32,7 @@ Apartment.init(
       allowNull: false,
     },
     zip: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     date_added: {
@@ -45,7 +45,7 @@ Apartment.init(
       allowNull: false,
     },
     beds: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     baths: {
@@ -53,7 +53,7 @@ Apartment.init(
       allowNull: false,
     },
     rating: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     notes: {

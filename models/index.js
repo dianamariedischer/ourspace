@@ -1,6 +1,7 @@
 const User = require('./User');
 const ApartmentCollection = require('./ApartmentCollection');
 const Apartment = require('./Apartment');
+const Comment = require('./Comment')
 
 User.hasMany(ApartmentCollection, {
   foreignKey: 'user_id',

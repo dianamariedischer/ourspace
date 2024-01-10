@@ -39,4 +39,4 @@ Comment.init(
   }
 );
 
-module.exports = Apartment;
+module.exports = Comment;
