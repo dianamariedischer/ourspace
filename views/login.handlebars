@@ -1,8 +1,8 @@
 <div class="login-card">
-    <h2>Sign in</h2>
+    <h2 class="card-title">Sign in</h2>
     <text>Welcome back, good luck searching!</text>
-    <form class="container">
-        <div class="login-container">
+    <form class="login-form">
+        <div class="form-card">
             <label for="email-login"><b>Email address</b></label>
             <input class="form-input" type="text" placeholder="Enter email address"/>
 
@@ -14,25 +14,33 @@
     </form>
 </div>
 <div class="login-card">
-    <h2>Create an Account</h2>
+    <h2 class="card-title">Create an Account</h2>
     <text>Lets find some places!</text>
-    <form class="container">
-        <div class="create-container">
+    <form class="signup-form">
+        <div class="form-card">
             <label for="first-name">First name</label>
-            <input/>
+            <input class="form-input" type="text" id="signup-first"/>
+        </div>
+        <div class="form-card">
             <label for="last-name">Last name</label>
-            <input/> 
-
+            <input class="form-input" type="text" id="signup-last"/> 
+        </div>
+        <div class="form-card">
             <label for="email">Email address</label>
             <input class="form-input" type="text"/>
-
+        </div>
+        <div class="form-card">
             <label for="password">Password</label>
             <input class="form-input" type="text"/>
-
+        </div>
+        <div class="form-card">
             <label for="reenter-password">Re-enter password</label>
             <input class="form-input" type="text"/>
+        </div>
+        <div class="form-card">
             <button type="submit">Sign Up</button>
         </div>
     </form>
 </div>
 
+<script src="/public/js/login.js"></script>
