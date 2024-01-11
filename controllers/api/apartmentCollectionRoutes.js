@@ -1,4 +1,19 @@
 const router = require('express').Router();
+const { ApartmentCollection } = require('../../models/ApartmentCollection');
+
+router.post('/', withAuth, async (req, res) => {
+  try{
+    const newApartment = await Apartment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newApartment);
+  }catch (err){
+    res.status(400).json(err);
+  }
+});
+
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
