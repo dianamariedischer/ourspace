@@ -25,6 +25,8 @@ router.get('/apartmentCollection/:id', async (req, res) => {
         {
           model: Apartment,
           attributes: [
+            'id',
+            'filename',
             'address1',
             'address2',
             'city',
