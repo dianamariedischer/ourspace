@@ -1,10 +1,8 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-// GET all galleries for homepage
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-
-    res.render('homepage', {
+    res.render("homepage", {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -13,24 +11,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 // Login route
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
-
 // Signup route
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
 module.exports = router;
