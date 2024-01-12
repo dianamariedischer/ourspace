@@ -18,6 +18,47 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
+router.get('/', async (req, res) => {
+  try {
+    const dbApartmentData = await Apartment.findAll({
+      include: [
+        {
+          model: Apartment,
+          attributes: [
+            'address1',
+            'address2',
+            'city',
+            'state',
+            'zip',
+            'date_added',
+            'rent',
+            'beds',
+            'baths',
+            'rating',
+            'notes',
+            'link',
+            'user_id',
+            'appartment_collection_id'
+          ],
+        },
+      ],
+    });
+
+    const apartments = dbApartmentData.map((apartment) =>
+      apartment.get({ plain: true })
+    );
+    res.render('homepage', {
+      apartments,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.get('/apartment/:id', async (req, res) => {
   try {
     const dbApartmentData = await Apartment.findByPk(req.params.id, {
