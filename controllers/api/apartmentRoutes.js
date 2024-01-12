@@ -46,11 +46,11 @@ router.get('/apartmentCollection/:id', async (req, res) => {
       ],
     });
 
-    const apartments = dbApartmentData.map((apartment) =>
+    const apartmentCollection = dbApartmentData.map((apartment) =>
       apartment.get({ plain: true })
     );
     res.render('apartmentCollection', {
-      apartments,
+      apartmentCollection,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
