@@ -67,19 +67,17 @@
   
   nav {
     display: flex;
-    background-color: var(--secondary);
   }
   
   nav a {
     color: var(--dark);
-    padding: 14px 20px;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
+    margin-right: 15px;;
   }
   
   nav a:hover {
     color: var(--secondary);
-    background-color: var(--dark);
   }
   
   .gallery {
@@ -181,7 +179,7 @@
 
   .homepage {
     flex-direction: column;
-    margin: 10% auto;
+    margin: 10% 10%;
   }
 
   .hero-text {
@@ -197,7 +195,17 @@
   .start-buttons {
     background-color: #D5E08D;
     margin: 40px;
-    padding: 10px;
+    width: 200px;
+    height: 60px;
+    border-radius: 16px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .start-buttons:hover {
+    box-shadow: 0px 17px 50px 22px rgba(202, 216, 112, 0.50);
   }
 
   #ourspace-image {

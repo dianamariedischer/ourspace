@@ -19,14 +19,25 @@
     <header class="display-flex justify-space-between align-center">
         <a class="display-flex" href="/">
             <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
-            <h1>Our Space</h1>
+            <h1>ourspace</h1>
         </a>
         <nav>
             {{#if logged_in}}
             <a href="/profile">profile</a> |
             <button class="no-button" id="logout">logout</button>
             {{else}}
-            <a href="/login">login</a>
+            <a href="/login">
+                <div>Hey there,</div>
+                <div>Log in</div>
+            </a>
+            <div id="hamburger-menu">
+                <button class="hamburger-button"> ☰ </button>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
             {{/if}}
         </nav>
     </header>
