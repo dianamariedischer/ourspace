@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
-router.get('/', async (req, res) => {
+router.get('/apartmentCollection/:id', async (req, res) => {
   try {
     const dbApartmentData = await Apartment.findAll({
       include: [
@@ -47,7 +47,7 @@ router.get('/', async (req, res) => {
     const apartments = dbApartmentData.map((apartment) =>
       apartment.get({ plain: true })
     );
-    res.render('homepage', {
+    res.render('apartmentCollection', {
       apartments,
       loggedIn: req.session.loggedIn,
     });

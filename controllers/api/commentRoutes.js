@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
-router.get('/apartmentCollection/:id', async (req, res) => {
+router.get('/api/comment', async (req, res) => {
   try {
     const dbCommentData = await Comment.findByPk(req.params.id, {
       include: [

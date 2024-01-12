@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
-router.get('/apartmentCollection/:id', async (req, res) => {
+router.get('/api/apartmentCollection', async (req, res) => {
   try {
     const dbApartmentCollectionData = await ApartmentCollection.findByPk(req.params.id, {
       include: [
@@ -41,15 +41,5 @@ router.get('/apartmentCollection/:id', async (req, res) => {
   }
 });
 
-
-
-// Login route
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('login');
-});
 
 module.exports = router;
