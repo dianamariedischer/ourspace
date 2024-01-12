@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <title>Our space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/jass.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
     <header class="display-flex justify-space-between align-center">
-        <h1>Our Space</h1>
+        <a class="display-flex" href="/">
+            <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
+            <h1>Our Space</h1>
+        </a>
         <nav>
             {{#if logged_in}}
             <a href="/profile">profile</a> |
