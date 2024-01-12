@@ -3,7 +3,7 @@ const { Apartment } = require('../../models/Apartment');
 
 
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/apartment', withAuth, async (req, res) => {
   try{
     const newApartment = await Apartment.create({
       ...req.body,
