@@ -3,7 +3,7 @@ const { Apartment } = require('../../models/Apartment');
 
 
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/apartment', withAuth, async (req, res) => {
   try{
     const newApartment = await Apartment.create({
       ...req.body,
@@ -18,13 +18,15 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
-router.get('/', async (req, res) => {
+router.get('/apartmentCollection/:id', async (req, res) => {
   try {
     const dbApartmentData = await Apartment.findAll({
       include: [
         {
           model: Apartment,
           attributes: [
+            'id',
+            'filename',
             'address1',
             'address2',
             'city',
@@ -44,11 +46,11 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const apartments = dbApartmentData.map((apartment) =>
+    const apartmentCollection = dbApartmentData.map((apartment) =>
       apartment.get({ plain: true })
     );
-    res.render('homepage', {
-      apartments,
+    res.render('apartmentCollection', {
+      apartmentCollection,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
