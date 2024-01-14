@@ -29,4 +29,12 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/apartmentCollection", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("apartmentCollection");
+});
+
 module.exports = router;
