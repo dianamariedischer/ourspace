@@ -6,6 +6,7 @@
 </aside>
 
 {{#if showApartments}}
+<div>Apartment Search - </div>
   <div class="row">
     <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
     <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
@@ -17,7 +18,11 @@
     <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
   </div>
 {{else}}
-  <a href="/apartmentCollection">Add apartment</a>
+<div class="buttons display-flex">
+  <div class="start-buttons">
+    <a href="/apartment">Add apartment</a>
+  </div>
+</div>
 {{/if}}
 
 <script src="/controllers/api/apartmentCollectionRoutes.js"></script>
