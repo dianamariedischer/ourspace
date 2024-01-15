@@ -13,7 +13,6 @@ Apartment.init(
     },
     filename: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     address1: {
       type: DataTypes.STRING,
@@ -21,7 +20,6 @@ Apartment.init(
     },
     address2: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     city: {
       type: DataTypes.STRING,
@@ -62,7 +60,6 @@ Apartment.init(
     },
     link: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -74,7 +71,7 @@ Apartment.init(
     apartment_collection_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'apartment',
+        model: 'apartmentcollection',
         key: 'id',
       },
   },
