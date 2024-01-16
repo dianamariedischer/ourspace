@@ -4,19 +4,18 @@
     </div>
     <div id="card" class="aptDetails" class="col">
         <div id="details">
-            <ul class="apt">
-                <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
-                <li>Rent {{Apartment.rent}}</li>
-                <li>Lease length years</li>
-                <li>Notes {{Apartment.notes}}</li>
+            <ul>
+                <li>{{apartment.beds}} bed / {{apartment.baths}} bath</li>
+                <li>Rent: ${{apartment.rent}}</li>
+                <li>Rating: {{apartment.rating}}/5</li>
+                <li>Notes: {{apartment.notes}}</li>
             </ul>
-            <p class="addedBy">{{Apartment.author}}</p>
-            <button id="dltButton" class="aptbuttons">Delete this listing</button>
+            <p class="addedBy"></p>
+            <button id="dltButton">Delete this listing</button>
         </div>
-    </div>
-            <div id="comments">
-            <div id="prevComments" class="preComments">
-                <h3>Some Stuff{{Apartment.comments}}</h3>
+        <div id="comments">
+            <div id="prevComments">
+                <h3></h3>
                 <span></span>
             </div>
             <input id="addComment" placeholder="Add a comment...">
