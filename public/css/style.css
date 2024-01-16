@@ -240,3 +240,50 @@
   #ourspace-image {
     height: 36px;
   }
+
+  /* apartment handlbar */
+
+  .aptCard {
+    background-color: white;
+    margin: 20px 20px;
+    width: 50%;
+  }
+
+  .aptbuttons {
+    margin: 2% 30%;
+    justify-content: center;
+    text-align: center;
+    background-color: #ca673b;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    font-weight: bold;
+    width: 175px;
+  }
+
+  ul.apt {
+    list-style: none;
+  }
+
+  .aptDetails {
+    background-color: #f3f4d9;
+    margin: 20px 20px;
+    padding: 20px;
+
+  }
+
+  .preComments {
+    background-color: #f1ece7;
+    margin: 20px;
+  }
+
+  .addComment {
+    background-color: #f1ece7;
+    border-radius: 5px;
+  }
+
+  #map{
+    border: 1px solid black;
+    width: 180px;
+    height: 180px;
+  }
