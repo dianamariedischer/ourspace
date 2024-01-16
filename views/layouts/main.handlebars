@@ -16,15 +16,11 @@
 </head>
 
 <body>
-    <header class="display-flex justify-space-between align-center">
-        <a class="display-flex" href="/">
-            <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
-            <h1>ourspace</h1>
-        </a>
+    
 
-        {{> header}}
+    {{> header}}
         
-    </header>
+    
     <main>
 
         {{{ body }}}
@@ -34,7 +30,7 @@
 
     </footer>
 
-    {{#if logged_in}}
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
     <!-- Leaflet JS -->

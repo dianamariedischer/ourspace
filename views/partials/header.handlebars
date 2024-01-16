@@ -1,19 +1,17 @@
-<nav>
-    {{#if logged_in}}
-    <a href="/profile">profile</a> |
-    <button class="no-button" id="logout">logout</button>
+<header class="display-flex justify-space-between align-center">
+    {{#if loggedIn}}
+    <a class="display-flex" href="/landingpage">
+        <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
+        <h1>ourspace</h1>
+    </a>
     {{else}}
-        <a href="/login">
-            <div>Hey there,</div>
-            <div>Log in</div>
-        </a>
-        <div id="hamburger-menu" style="display: flex;">
-            <div class="nav-links" style="display: flex; align-items: flex-end;">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-            <button class="hamburger-button"> ☰ </button>
-        </div>
+    <a class="display-flex" href="/">
+        <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
+        <h1>ourspace</h1>
+    </a>
     {{/if}}
-</nav>
+
+    {{> nav }}
+
+    
+</header>
