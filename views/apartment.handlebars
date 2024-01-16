@@ -1,26 +1,32 @@
-<div id="container" class="aptCard">
-    <div id="address">
-        <h2>{{apartment.address1}}</h2>
-    </div>
-    <div id="card" class="aptDetails" class="col">
-        <div id="details">
-            <ul class="apt">
-                <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
-                <li>Rent {{Apartment.rent}}</li>
-                <li>Lease length years</li>
-                <li>Notes {{Apartment.notes}}</li>
-            </ul>
-            <p class="addedBy">{{Apartment.author}}</p>
-            <button id="dltButton" class="aptbuttons">Delete this listing</button>
-        </div>
-    </div>
-            <div id="comments">
-            <div id="prevComments" class="preComments">
-                <h3>Some Stuff{{Apartment.comments}}</h3>
-                <span></span>
+<div class="container-fluid" class="aptCard">
+    <div class="row">
+        <div class="col" style="border: 1px solid black;">
+            <div id="address">
+                <h2>{{apartment.address1}}</h2>
             </div>
-            <input id="addComment" placeholder="Add a comment...">
+            <div id="card" class="aptDetails">
+                <div id="details">
+                    <ul class="apt">
+                        <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
+                        <li>Rent {{Apartment.rent}}</li>
+                        <li>Lease length years</li>
+                        <li>Notes {{Apartment.notes}}</li>
+                    </ul>
+                    <p class="addedBy">{{Apartment.author}}</p>
+                    <button id="dltButton" class="aptbuttons">Delete this listing</button>
+                </div>
+            </div>
+            <div id="comments">
+                <div id="prevComments" class="preComments">
+                    <h3>Some Stuff{{Apartment.comments}}</h3>
+                    <span></span>
+                </div>
+                <input id="addComment" class="addComment" placeholder="Add a comment...">
+            </div>
         </div>
-        <div id="map">
+        <div class="col" style="border: 1px solid black;">
+            <div id="map">Map Goes Here
+            </div>
         </div>
+    </div>
 </div>
