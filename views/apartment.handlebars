@@ -1,24 +1,21 @@
-<div id="'container">
-    <div id="'header">
-        <h1>Our Space</h1>
-    </div>
+<div id="container">
     <div id="address">
-        <h2></h2>
+        <h2>{{apartment.address1}}</h2>
     </div>
     <div id="card">
         <div id="details">
-            <ul class="aptDetails">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul>
+                <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
+                <li>Rent {{Apartment.rent}}</li>
+                <li>Lease length{{}}year(s)</li>
+                <li>Notes {{Apartment.notes}}</li>
             </ul>
-            <p class="addedBy"></p>
+            <p class="addedBy">{{Apartment.author}}</p>
             <button id="dltButton">Delete this listing</button>
         </div>
         <div id="comments">
             <div id="prevComments">
-                <h3></h3>
+                <h3>{{Apartment.comments}}</h3>
                 <span></span>
                 <p></p>
             </div>
@@ -28,6 +25,4 @@
         </div>
 
     </div>
-
-    <footer>Ourspace</footer>
 </div>
