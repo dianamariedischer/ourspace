@@ -47,4 +47,22 @@ router.get("/apartment", (req, res) => {
   res.render("apartment");
 });
 
+// Collection Form route
+router.get("/collectionForm", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("collectionForm");
+});
+
+// Apartment Form route
+router.get("/apartmentForm", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("apartmentForm");
+});
+
 module.exports = router;
