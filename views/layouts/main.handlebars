@@ -16,31 +16,11 @@
 </head>
 
 <body>
-    <header class="display-flex justify-space-between align-center">
-        <a class="display-flex" href="/">
-            <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
-            <h1>ourspace</h1>
-        </a>
-        <nav>
-            {{#if logged_in}}
-            <a href="/profile">profile</a> |
-            <button class="no-button" id="logout">logout</button>
-            {{else}}
-            <a href="/login">
-                <div>Hey there,</div>
-                <div>Log in</div>
-            </a>
-            <div id="hamburger-menu">
-                <button class="hamburger-button"> ☰ </button>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#">Services</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-            {{/if}}
-        </nav>
-    </header>
+    
+
+    {{> header}}
+        
+    
     <main>
 
         {{{ body }}}
@@ -50,16 +30,17 @@
 
     </footer>
 
-    {{#if logged_in}}
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
-    {{!-- Leaflet JS --}}
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    {{!-- Local Map JS --}}
+    <!-- Local Map JS -->
     <script src="../../public/js/leaflet.js"></script>
     <!-- Geocoder Scipt -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="/js/hamburger-menu.js"></script>
 </body>
 
 </html>

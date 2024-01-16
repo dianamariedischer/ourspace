@@ -64,7 +64,7 @@
     text-align: left;
     color: var(--light);
   }
-  
+
   nav {
     display: flex;
   }
@@ -80,7 +80,7 @@
     color: var(--secondary);
   }
   
-  .gallery {
+  .container {
     flex: 4;
     background-color: #fff;
     padding: 50px;
@@ -130,10 +130,14 @@
   }
   
   .login-card {
-    margin: 0 0 20px 0;
+    margin: auto;
+    width: 50%; /* Adjust the width as needed */
+    /* padding: 20px; */
+    /* margin: 0 0 20px 0; */
     flex: 0 0 50%;
     max-width: 50%;
-    padding: 5px;
+    /* padding: 5px; */
+    padding: 40px 40px 0 40px;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
     border-style: double;
@@ -208,6 +212,88 @@
     box-shadow: 0px 17px 50px 22px rgba(202, 216, 112, 0.50);
   }
 
+  .hamburger-button {
+    cursor: pointer;
+    background-color: var(--light);
+    border: none;
+    font-size: 30px;
+  }
+
+  .nav-links {
+    display: none;
+    background-color: var(--dark);
+    color: white;
+    position: absolute;
+    right: 0%;
+    top: 58px;
+ }
+ .nav-links a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+ }
+ .nav-links a:hover {
+    background-color: #111;
+ }
+
   #ourspace-image {
     height: 36px;
+  }
+
+  /* apartment handlbar */
+
+  .aptCard {
+    background-color: white;
+    margin: 20px 20px;
+    width: 75%;
+    margin: auto;
+    border: 1px solid black;
+  }
+
+  .aptbuttons {
+    margin: 2% 30%;
+    justify-content: center;
+    text-align: center;
+    background-color: #ca673b;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    font-weight: bold;
+    width: 175px;
+  }
+
+  ul.apt {
+    list-style: none;
+  }
+
+  .aptDetails {
+    background-color: #f3f4d9;
+    margin: 20px 20px;
+    padding: 20px;
+    width: 100%;
+
+  }
+
+  .preComments {
+    background-color: #f1ece7;
+    margin: 20px;
+    border-radius: 5px;
+    margin: 5px 20px;
+    width: 100%;
+  }
+
+  .addComment {
+    background-color: #f1ece7;
+    border-radius: 5px;
+    margin: 5px 20px;
+    border: none;
+    height: 30px;
+    width: 100%;
+  }
+
+  #map{
+    border: 1px solid black;
+    width: 180px;
+    height: 180px;
   }

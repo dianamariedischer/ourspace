@@ -1,37 +1,32 @@
-<div id="'container">
-    <div id="'header">
-        <h1>Our Space</h1>
-    </div>
-    <div id="address">
-        <h2>123 Street Road #2</h2>
-    </div>
-    <div id="card">
-
-        <div id="details">
-            <ul class="aptDetails">
-                <li>3 beds / 2 baths</li>
-                <li>Rent: $1,200.00</li>
-                <li>Lease Length: 1 year</li>
-                <li>Notes:</li>
-            </ul>
-            <p class="addedBy">Added by Hyuntae 12/1/23 1:35 PM</p>
-            <button id="dltButton">Delete this listing</button>
-        </div>
-        <div id="comments">
-
-            <div id="prevComments">
-                <h3>Sam</h3>
-                <span>11/13/23 10:58 PM</span>
-                <p>Love it! Bi-level is appreciated for my cat, he'll love running up and down the stairs.</p>
+<div class="container-fluid" class="aptCard">
+    <div class="row">
+        <div class="col" style="border: 1px solid black;">
+            <div id="address">
+                <h2>{{apartment.address1}}</h2>
             </div>
-            <input id="addComment" placeholder="Add a comment...">
+            <div id="card" class="aptDetails">
+                <div id="details">
+                    <ul class="apt">
+                        <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
+                        <li>Rent {{Apartment.rent}}</li>
+                        <li>Lease length years</li>
+                        <li>Notes {{Apartment.notes}}</li>
+                    </ul>
+                    <p class="addedBy">{{Apartment.author}}</p>
+                    <button id="dltButton" class="aptbuttons">Delete this listing</button>
+                </div>
+            </div>
+            <div id="comments">
+                <div id="prevComments" class="preComments">
+                    <h3>Some Stuff{{Apartment.comments}}</h3>
+                    <span></span>
+                </div>
+                <input id="addComment" class="addComment" placeholder="Add a comment...">
+            </div>
         </div>
-
-        <div id="map">
-            <p>Map Goes Here</p>
+        <div class="col" style="border: 1px solid black;">
+            <div id="map">Map Goes Here
+            </div>
         </div>
-
     </div>
-
-    <footer>Ourspace</footer>
 </div>

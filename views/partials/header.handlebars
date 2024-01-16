@@ -1,0 +1,17 @@
+<header class="display-flex justify-space-between align-center">
+    {{#if loggedIn}}
+    <a class="display-flex" href="/landingpage">
+        <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
+        <h1>ourspace</h1>
+    </a>
+    {{else}}
+    <a class="display-flex" href="/">
+        <img src="/images/ourspace.png" alt="ourspace-logo" id="ourspace-image">
+        <h1>ourspace</h1>
+    </a>
+    {{/if}}
+
+    {{> nav }}
+
+    
+</header>

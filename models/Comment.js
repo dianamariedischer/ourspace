@@ -25,7 +25,7 @@ Comment.init(
     apartment_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'user',
+          model: 'apartment',
           key: 'id',
         },
       },
@@ -35,7 +35,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'apartment',
+    modelName: 'comment',
   }
 );
 

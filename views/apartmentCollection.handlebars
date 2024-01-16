@@ -5,13 +5,41 @@
   </nav>
 </aside>
 
-<div class="row">
-  <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-  <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-  <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+<section class="flex-row justify-center">
+    {{#each collection.apartments as |apartment|}}
+    <section class="card">
+    <a href="/apartment/{{id}}">
+    <header>{{address1}}</header>
+
+    <div class="card-body">
+      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
+      <p>Rating: {{ rating }}</p>
+    </div>
+  </a>
+</section>
+    {{/each}}
+</section>
+
+{{!-- {{#if showApartments}}
+<div>Apartment Search - </div>
+  <div class="row">
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
+  </div>
+{{else}} --}}
+<div class="buttons display-flex">
+  <div class="start-buttons">
+    <a href="/collectionForm">Add apartment</a>
+  </div>
 </div>
-<div class="row">
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-</div>
+{{!-- {{/if}} --}}
+
+
+
+<script src="/controllers/api/apartmentCollectionRoutes.js"></script>

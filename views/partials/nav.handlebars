@@ -1,0 +1,27 @@
+<nav>
+    {{#if loggedIn}}
+    <button id="logout">
+        <div>Hey {{ name }},</div>
+        <div>Log out </div>
+    </button>
+    {{else}}
+    <a href="/login">
+        <div>Hey there,</div>
+        <div>Log in</div>
+    </a>
+    {{/if}}
+    <div id="hamburger-menu" style="display: flex;">
+        <div class="nav-links" style="display: none;">
+            {{#if loggedIn}}
+            <a href="/landingpage">View your collections</a>
+            <a href="/collectionform">Start a new search</a>
+            <a href="/apartmentform">Add a place</a>
+            {{else}}
+            <a href="/login">Log in</a>
+            <a href="/signup">Create account</a>
+            {{/if}}
+        </div>
+        <button class="hamburger-button"> ☰ </button>
+    </div>
+    
+</nav>

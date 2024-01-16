@@ -1,21 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
+// login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -37,8 +24,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.userId = userData.id;
+      req.session.loggedIn = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
@@ -48,7 +35,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/signup', async (req, res) => {
+// new user
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create(
       {
@@ -59,8 +47,8 @@ router.post('/signup', async (req, res) => {
         },
         )
         req.session.save(()=> {
-          req.session.user_id = userData.id;
-          req.session.logged_in = true;
+          req.session.userId = userData.id;
+          req.session.loggedIn = true;
 
           res.status(200).json({ user: userData, message: 'You are now signed in!' });
         }); 
@@ -69,8 +57,9 @@ router.post('/signup', async (req, res) => {
       }   
 });
 
+// logout
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });

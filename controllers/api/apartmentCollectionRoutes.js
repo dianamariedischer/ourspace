@@ -1,12 +1,13 @@
 const router = require("express").Router();
-const { ApartmentCollection } = require("../../models/ApartmentCollection");
+const { ApartmentCollection } = require("../../models");
 
-router.post("/apartmentCollection", withAuth, async (req, res) => {
+// add new collection
+router.post("/", async (req, res) => {
   try {
     const newApartmentCollection = await ApartmentCollection.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+      title: req.body.title,
+      user_id: req.session.userId,
+    }); 
 
     res.status(200).json(newApartmentCollection);
   } catch (err) {
