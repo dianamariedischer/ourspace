@@ -6,15 +6,16 @@
     <form class="login-form">
         <div class="form-card">
             <label for="email-login"><b>Email address</b></label>
-            <input class="form-input" type="text" placeholder="Enter email address"/>
+            <input class="form-input" type="text" id="email-login" placeholder="Enter email address"/>
 
             <label for="password-login"><b>Password</b></label>
-            <input class="form-input" type="text" placeholder="Enter password"/>
+            <input class="form-input" type="text" id="password-login" placeholder="Enter password"/>
         </div>
         <div class="form-card">
             <div class="buttons display-flex">
                 <div class="start-buttons">
-                    <a href="/apartmentCollection">Login</a>
+                    {{!-- <a href="/landingpage">Login</a> --}}
+                    <button class="btn btn-primary" type="submit">Login</button>
                 </div>
             </div> 
         </div>
@@ -22,4 +23,4 @@
 </div>
 
 
-<script src="/public/js/login.js"></script>
+<script src="/js/login.js"></script>

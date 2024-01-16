@@ -10,7 +10,7 @@ const apartmentCollectionData = [
     user_id: 1,
   },
   {
-    title: 'House Hunt w/ Partick and Spongebob',
+    title: 'House Hunt w/ Patrick and Spongebob',
     user_id: 1,
   },
 ];
