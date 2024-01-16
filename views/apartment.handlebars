@@ -1,28 +1,26 @@
-<div id="container">
+<div id="container" class="aptCard">
     <div id="address">
         <h2>{{apartment.address1}}</h2>
     </div>
-    <div id="card">
+    <div id="card" class="aptDetails" class="col">
         <div id="details">
-            <ul>
+            <ul class="apt">
                 <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
                 <li>Rent {{Apartment.rent}}</li>
-                <li>Lease length{{}}year(s)</li>
+                <li>Lease length years</li>
                 <li>Notes {{Apartment.notes}}</li>
             </ul>
             <p class="addedBy">{{Apartment.author}}</p>
-            <button id="dltButton">Delete this listing</button>
+            <button id="dltButton" class="aptbuttons">Delete this listing</button>
         </div>
-        <div id="comments">
-            <div id="prevComments">
-                <h3>{{Apartment.comments}}</h3>
+    </div>
+            <div id="comments">
+            <div id="prevComments" class="preComments">
+                <h3>Some Stuff{{Apartment.comments}}</h3>
                 <span></span>
-                <p></p>
             </div>
             <input id="addComment" placeholder="Add a comment...">
         </div>
         <div id="map">
         </div>
-
-    </div>
 </div>
