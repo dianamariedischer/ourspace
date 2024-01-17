@@ -3,10 +3,21 @@ const { Apartment } = require("../../models");
 
 //router.post("/apartment", withAuth, async (req, res) => {
 router.post("/", async (req, res) => {
-  console.log(...req.body);
   try {
     const newApartment = await Apartment.create({
-      ...req.body,
+      imagelink: req.body.imageLink,
+      address1: req.body.address1,
+      address2: req.body.address2,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
+      rent: req.body.rent,
+      beds: req.body.beds,
+      baths: req.body.baths,
+      rating: req.body.rating,
+      notes: req.body.notes,
+      link: req.body.link,
+      apartment_collection_id: req.body.apartment_collection_id,
       user_id: req.session.userId,
     });
 

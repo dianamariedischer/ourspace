@@ -9,11 +9,12 @@
             <div id="card" class="aptDetails">
                 <div id="details">
                     <ul class="apt">
-                        <li>{{apartment.beds}} beds / {{apartment.baths}} baths</li>
+                        <li>{{apartment.beds}} bed / {{apartment.baths}} bath</li>
                         <li>Rent: ${{apartment.rent}}</li>
                         <li>Notes: {{apartment.notes}}</li>
+                        <li><a href="{{apartment.link}}">Listing</a></li>
                     </ul>
-                    <p class="addedBy">{{apartment.author}}</p>
+                    <p class="addedBy">{{apartment.firstName}}</p>
                     <button id="dltButton" class="aptbuttons">Delete this listing</button>
                 </div>
             </div>

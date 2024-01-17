@@ -1,46 +1,42 @@
-<aside>
+{{!-- <aside>
   <nav class="nav-bar">
     <a href="">Add a place</a>
     <a href="">Start a new search</a>
   </nav>
-</aside>
-
+</aside> --}}
+{{#if loggedIn}}
 <section class="flex-row justify-center">
     {{#each collection.apartments as |apartment|}}
     <section class="card">
     <a href="/apartment/{{id}}">
-    <header>{{address1}}</header>
+    <header>{{address1}}, {{address2}} <br> {{city}}, {{state}}, {{zip}} </header>
 
     <div class="card-body">
-      {{!-- <img src="{{link}}" alt="{{description}}"> --}}
-      <p>Added by: {{firstName}}</p>
-      <p>Rating: {{ rating }}</p>
+      <img src="{{imagelink}}" alt="{{description}}">
+      <p>Added by: {{user.firstName}} on {{ format_date date_added }}</p>
+      <p id="rating">Rating: {{ rating }}</p>
+      <p>{{beds}} bed / {{baths}} bath <br>
+        Rent: ${{rent}} <br>
+        Notes: {{notes}}
+      </p>
     </div>
   </a>
 </section>
     {{/each}}
 </section>
 
-{{!-- {{#if showApartments}}
-<div>Apartment Search - </div>
-  <div class="row">
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-    <div class="col-md-4" style="background-color: rgb(194, 222, 152);"></div>
-  </div>
-{{else}} --}}
+
 <div class="buttons display-flex">
   <div class="start-buttons">
     <a href="/apartmentForm">Add apartment</a>
   </div>
 </div>
-{{!-- {{/if}} --}}
 
+{{else}}
+
+<p class="m-auto">Please <a href="/login">log in</a> or <a href="/signup">create an account</a> to view this page.</p>
+
+{{/if}}
 
 
 <script src="/controllers/api/apartmentCollectionRoutes.js"></script>

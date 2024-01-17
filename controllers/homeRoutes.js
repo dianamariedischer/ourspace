@@ -47,17 +47,6 @@ router.get("/signup", (req, res) => {
 // if user is logged in, get all apartment collections that belong to user for landing page
 router.get('/landingpage', async (req, res) => {
   try {
-    const dbApartmentCollectionData = await ApartmentCollection.findAll({
-      where: {
-        user_id: req.session.userId
-      }
-    });
-
-    console.log(dbApartmentCollectionData);
-
-    const collections = dbApartmentCollectionData.map((collection) =>
-      collection.get({ plain: true })
-    );
 
     const userData = await User.findByPk(req.session.userId, {
       attributes: ['first_name'],
@@ -65,6 +54,25 @@ router.get('/landingpage', async (req, res) => {
 
     if (userData) {
       const user = userData.get({ plain: true });
+
+      const dbApartmentCollectionData = await ApartmentCollection.findAll({
+        where: {
+          user_id: req.session.userId
+        },
+        include: [
+          {
+            model: Apartment,
+            attributes: [
+              'imagelink',
+              'address1',
+            ],
+          }
+        ]
+      });
+  
+      const collections = dbApartmentCollectionData.map((collection) =>
+        collection.get({ plain: true })
+      );
 
       res.render("landingpage", {
         collections,
@@ -74,7 +82,6 @@ router.get('/landingpage', async (req, res) => {
 
     } else {
       res.render("landingpage", {
-        collections,
         loggedIn: req.session.loggedIn,
       });
     }
@@ -95,6 +102,10 @@ router.get("/apartmentCollection/:id", async (req, res) => {
             'id',
             'imagelink',
             'address1',
+            'address2',
+            'city',
+            'state',
+            'zip',
             'date_added',
             'rent',
             'beds',
@@ -170,21 +181,55 @@ router.get("/apartment/:id", async (req, res) => {
 });
 
 // Collection Form route
-router.get("/collectionform", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/");
-  //   return;
-  // }
-  res.render("collectionForm");
+router.get("/collectionform", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+        attributes: ['first_name'],
+    });
+
+    if (userData) {
+      const user = userData.get({ plain: true });
+
+      res.render("collectionform", {
+        loggedIn: req.session.loggedIn,
+        name: user.first_name
+      });
+
+    } else {
+      res.render("collectionform", {
+        loggedIn: req.session.loggedIn,
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // Apartment Form route
-router.get("/apartmentForm", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/");
-  //   return;
-  // }
-  res.render("apartmentForm");
+router.get("/apartmentForm", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+        attributes: ['first_name'],
+    });
+
+    if (userData) {
+      const user = userData.get({ plain: true });
+
+      res.render("apartmentform", {
+        loggedIn: req.session.loggedIn,
+        name: user.first_name
+      });
+
+    } else {
+      res.render("apartmentform", {
+        loggedIn: req.session.loggedIn,
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

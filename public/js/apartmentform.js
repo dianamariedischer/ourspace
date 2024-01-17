@@ -7,6 +7,7 @@ const apartmentFormHandler = async (event) => {
     const city = document.querySelector('#city').value.trim();
     const state = document.querySelector('#state').value.trim();
     const zip = document.querySelector('#zip').value.trim();
+    const rent = document.querySelector('#rent').value.trim();
     const beds = document.querySelector('#bed').value.trim();
     const baths = document.querySelector('#bath').value.trim();
     const rating = document.querySelector('#rating').value.trim();
@@ -25,6 +26,7 @@ const apartmentFormHandler = async (event) => {
                     city, 
                     state,
                     zip,
+                    rent,
                     beds,
                     baths,
                     rating,
