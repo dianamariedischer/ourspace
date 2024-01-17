@@ -1,12 +1,13 @@
 const router = require("express").Router();
-const { Apartment } = require("../../models/Apartment");
+const { Apartment } = require("../../models");
 
 //router.post("/apartment", withAuth, async (req, res) => {
-router.post("/apartment", async (req, res) => {
+router.post("/", async (req, res) => {
+  console.log(...req.body);
   try {
     const newApartment = await Apartment.create({
       ...req.body,
-      user_id: req.session.user_id,
+      user_id: req.session.userId,
     });
 
     res.status(200).json(newApartment);
@@ -23,7 +24,6 @@ router.get("/apartmentCollection/:id", async (req, res) => {
           model: Apartment,
           attributes: [
             "id",
-            "filename",
             "address1",
             "address2",
             "city",

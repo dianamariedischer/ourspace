@@ -1,50 +1,65 @@
-<div class="login-card">
-    <form class="signup-form">
+    <form class="apartment-form">
+        <div class="form-card">
+            {{!-- <label for="collection">Which collection is this apartment in?</label>
+            <select id="collection-id" name="collection">
+                <option value="1">House Search with ..</option>
+            </select> --}}
+            <label for="collection-id">What is the ID of the collection you'd like to add to?</label>
+            <input class="form-input" type="text" id="collection-id"/>
+        </div>
         <div class="form-card">
             <label for="address1">Address 1</label>
-            <input class="form-input" type="text" id="signup-first"/>
-
+            <input class="form-input" type="text" id="address1"/>
+        </div>
+        <div class="form-card">
             <label for="address2">Address 2</label>
-            <input class="form-input" type="text" id="signup-last"/> 
-
+            <input class="form-input" type="text" id="address2"/> 
+        </div>
+        <div class="form-card">
             <label for="city">City</label>
-            <input class="form-input" type="text"/>
-
+            <input class="form-input" type="text" id="city"/>
+        </div>
+        <div class="form-card">
             <label for="state">State</label>
-            <input class="form-input" type="text"/>
-        
+            <input class="form-input" type="text" id="state"/>
+        </div>
+        <div class="form-card">
             <label for="zip">Zip</label>
-            <input class="form-input" type="text"/>
-
-        <div class="detail-card">
-            <label for="bed">Bed</label>
-            <input class="detail-input" type="text"/>
-
-            <label for="bath">Bath</label>
-            <input class="detail-input" type="text"/>
+            <input class="form-input" type="text" id="zip"/>
+        </div>
+        <div class="form-card">
+            <label for="bed">Beds</label>
+            <input class="form-input" type="text" id="bed"/>
+        </div>
+        <div class="form-card">
+            <label for="bath">Baths</label>
+            <input class="form-input" type="text" id="bath"/>
         </div>
         
         <div class="form-card">
             <label for="rating">Rating</label>
-            <input class="form-input" type="text"/>
-
-            <label for="link">Link</label>
-            <input class="form-input" type="text"/>
-
-            <label for="notes">Notes</label>
-            <textarea></textarea>
+            <input class="form-input" type="text" id="rating"/>
         </div>
-        <div class="buttons display-flex">
-            <div class="image-buttons">
-                <a href="/apartmentCollection">upload an image</a>
-            </div>
+        <div class="form-card">
+            <label for="link">Link</label>
+            <input class="form-input" type="text" id="link"/>
+        </div>
+        <div class="form-card">
+            <label for="notes">Notes</label>
+            <textarea id="notes"></textarea>
+        </div>
+        <div class="form-card">
+            <label for="image-link">Link to image</label>
+            <input class="form-input" type="text" id="image-link"/>
         </div>
         <div class="form-card">
             <div class="buttons display-flex">
                 <div class="start-buttons">
-                    <a href="/apartmentCollection">Submit</a>
+                    {{!-- <a href="/landingpage">Submit</a> --}}
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </div> 
         </div>
     </form>
-</div>
+
+    <script src="/js/apartmentform.js"></script>

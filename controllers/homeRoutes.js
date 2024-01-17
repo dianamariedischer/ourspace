@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 // Login route
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/apartmentcollection");
+    res.redirect("/landingpage");
     return;
   }
   res.render("login");
@@ -38,17 +38,23 @@ router.get("/login", (req, res) => {
 // Signup route
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/apartmentcollection");
+    res.redirect("/landingpage");
     return;
   }
   res.render("signup");
 });
 
-// get all apartment collections for landing page
+// if user is logged in, get all apartment collections that belong to user for landing page
 router.get('/landingpage', async (req, res) => {
   try {
-    const dbApartmentCollectionData = await ApartmentCollection.findAll();
-    
+    const dbApartmentCollectionData = await ApartmentCollection.findAll({
+      where: {
+        user_id: req.session.userId
+      }
+    });
+
+    console.log(dbApartmentCollectionData);
+
     const collections = dbApartmentCollectionData.map((collection) =>
       collection.get({ plain: true })
     );
@@ -97,6 +103,12 @@ router.get("/apartmentCollection/:id", async (req, res) => {
             'notes',
             'user_id'
           ],
+          include: [
+            {
+              model: User,
+              attributes: ['firstName']
+            }
+          ]
         },
       ],
     });
