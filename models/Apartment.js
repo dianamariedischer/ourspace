@@ -11,7 +11,7 @@ Apartment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    filename: {
+    imagelink: {
       type: DataTypes.STRING,
     },
     address1: {

@@ -12,7 +12,8 @@
     <header>{{address1}}</header>
 
     <div class="card-body">
-      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
+      {{!-- <img src="{{link}}" alt="{{description}}"> --}}
+      <p>Added by: {{firstName}}</p>
       <p>Rating: {{ rating }}</p>
     </div>
   </a>
@@ -35,7 +36,7 @@
 {{else}} --}}
 <div class="buttons display-flex">
   <div class="start-buttons">
-    <a href="/collectionForm">Add apartment</a>
+    <a href="/apartmentForm">Add apartment</a>
   </div>
 </div>
 {{!-- {{/if}} --}}
