@@ -93,7 +93,7 @@ router.get("/apartmentCollection/:id", async (req, res) => {
           model: Apartment,
           attributes: [
             'id',
-            'filename',
+            'imagelink',
             'address1',
             'date_added',
             'rent',
