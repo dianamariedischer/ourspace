@@ -172,7 +172,32 @@
     padding-right: 100px;
     padding-left: 100px;
   }
-  
+
+  .detail-card {
+    display: flex;
+    align-items: baseline;
+    margin: 2.5rem 0;
+  }
+
+  .detail-input {
+    margin: auto;
+    height: 45px;
+    border-radius: 4px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+ 
   /* LAYOUT */
   .container {
     display: flex;
@@ -208,9 +233,28 @@
     justify-content: center;
   }
 
+  .image-buttons {
+    background-color: #D5E08D;
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .start-buttons:hover {
     box-shadow: 0px 17px 50px 22px rgba(202, 216, 112, 0.50);
   }
+
+  .btn.btn-primary {
+    background-color: #D5E08D;
+    color: #d9e9e8;
+}
+
+.btn.btn-primary:hover {
+  background-color: #D5E08D;
+}
 
   .hamburger-button {
     cursor: pointer;
@@ -241,7 +285,7 @@
     height: 36px;
   }
 
-  /* apartment handlbar */
+  /* apartment handlebar */
 
   .aptCard {
     background-color: white;
