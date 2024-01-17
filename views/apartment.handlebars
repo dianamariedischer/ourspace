@@ -7,18 +7,20 @@
             <div id="card" class="aptDetails">
                 <div id="details">
                     <ul class="apt">
-                        <li>{{Apartment.beds}} beds / {{Apartment.baths}} baths</li>
-                        <li>Rent {{Apartment.rent}}</li>
+                        <li>{{apartment.beds}} beds / {{apartment.baths}} baths</li>
+                        <li>Rent {{apartment.rent}}</li>
                         <li>Lease length years</li>
-                        <li>Notes {{Apartment.notes}}</li>
+                        <li>Notes {{apartment.notes}}</li>
                     </ul>
-                    <p class="addedBy">{{Apartment.author}}</p>
+                    <p class="addedBy">{{apartment.author}}</p>
                     <button id="dltButton" class="aptbuttons">Delete this listing</button>
                 </div>
             </div>
             <div id="comments">
+
                 <div id="prevComments" class="preComments">
-                    <h3>Some Stuff{{Apartment.comments}}</h3>
+                    {{!-- might need a partial here, reference exc. 18 in the MVC Lessons --}}
+                    <h3>Some Stuff{{apartment.comments}}</h3>
                     <span></span>
                 </div>
                 <input id="addComment" class="addComment" placeholder="Add a comment...">
@@ -30,3 +32,11 @@
         </div>
     </div>
 </div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Geocoder Scipt -->
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<!-- Local Map JS -->
+<script src="/js/leaflet.js"></script>
