@@ -5,13 +5,13 @@ const userData = [
     firstName: 'Peter',
     lastName: 'Parker',
     email: 'justsomeguy@gmail.com',
-    password: 'spiderman123',
+    password: '$2b$10$1FRmI88fcYCIQl58rYFkrOAEg9WSdt04oUHbKrpvjrCyuWmHY/Lga',
   },
   {
-    firstName: 'Greg',
-    lastName: 'Daniels',
-    email: 'ihavetwofirstnames@hotmail.com',
-    password: 'David5678',
+    firstName: 'MJ',
+    lastName: 'Watson',
+    email: 'spidermanluvr@gmail.com',
+    password: '$2b$10$1FRmI88fcYCIQl58rYFkrOAEg9WSdt04oUHbKrpvjrCyuWmHY/Lga',
   },
 ];
 

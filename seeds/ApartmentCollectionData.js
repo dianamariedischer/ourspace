@@ -2,15 +2,15 @@ const { ApartmentCollection } = require('../models');
 
 const apartmentCollectionData = [
   {
-    title: 'Apartment Search with MJ',
+    title: 'High Rises in Boston with MJ',
     user_id: 1,
   },
   {
-    title: 'The Hive',
+    title: 'Philly Solo Living',
     user_id: 1,
   },
   {
-    title: 'House Hunt w/ Patrick and Spongebob',
+    title: 'Burbs',
     user_id: 1,
   },
 ];
