@@ -261,6 +261,8 @@
     padding: 5px 5px;
     font-weight: bold;
     width: 175px;
+    border: none;
+    
   }
 
   ul.apt {
@@ -278,13 +280,16 @@
   .preComments {
     background-color: #f1ece7;
     margin: 20px;
+    padding: 25px;
     border-radius: 5px;
     margin: 5px 20px;
+    height: 150px;
     width: 100%;
   }
 
   .addComment {
     background-color: #f1ece7;
+    padding: 25px;
     border-radius: 5px;
     margin: 5px 20px;
     border: none;
@@ -296,4 +301,12 @@
     border: 1px solid black;
     width: 500px;
     height: 500px;
+  }
+
+  #aptCont {
+    margin: 20px auto;
+  }
+
+  #address {
+    margin: 20px;
   }
