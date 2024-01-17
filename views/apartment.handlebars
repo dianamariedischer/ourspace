@@ -1,16 +1,17 @@
-<div class="container-fluid" class="aptCard">
+<div id='aptCont' class="container-fluid" class="aptCard">
     <div class="row">
         <div class="col" style="border: 1px solid black;">
             <div id="address">
-                <h2>{{apartment.address1}}</h2>
+                <!-- The button used to copy the text -->
+                <h4 id="s_address">{{apartment.address1}}</h4>
+                <button onclick="addCopy()">Copy Address</button>
             </div>
             <div id="card" class="aptDetails">
                 <div id="details">
                     <ul class="apt">
                         <li>{{apartment.beds}} beds / {{apartment.baths}} baths</li>
-                        <li>Rent {{apartment.rent}}</li>
-                        <li>Lease length years</li>
-                        <li>Notes {{apartment.notes}}</li>
+                        <li>Rent: ${{apartment.rent}}</li>
+                        <li>Notes: {{apartment.notes}}</li>
                     </ul>
                     <p class="addedBy">{{apartment.author}}</p>
                     <button id="dltButton" class="aptbuttons">Delete this listing</button>
@@ -20,7 +21,7 @@
 
                 <div id="prevComments" class="preComments">
                     {{!-- might need a partial here, reference exc. 18 in the MVC Lessons --}}
-                    <h3>Some Stuff{{apartment.comments}}</h3>
+                    <h5>Sam{{apartment.comments}}</h5>
                     <span></span>
                 </div>
                 <input id="addComment" class="addComment" placeholder="Add a comment...">
