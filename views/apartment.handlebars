@@ -4,6 +4,7 @@
             <div id="address">
                 <!-- The button used to copy the text -->
                 <h4 id="s_address">{{apartment.address1}}</h4>
+                <p>Added by: {{apartment.user.firstName}} on {{ format_date apartment.date_added }}</p>
                 <button onclick="addCopy()">Copy Address</button>
             </div>
             <div id="card" class="aptDetails">
@@ -21,7 +22,11 @@
             <div id="comments">
 
                 <div id="prevComments" class="preComments">
-                    <h3>Some Stuff{{apartment.comments}}</h3>
+                    <ul>
+                    {{#each apartment.comments}}
+                    <li>{{ user.firstName }} says: {{text}}</li>
+                    {{/each}}
+                    </ul>
                     <span></span>
                 </div>
                 <input id="addComment" class="addComment" placeholder="Add a comment...">
