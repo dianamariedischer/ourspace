@@ -92,7 +92,7 @@ router.get('/landingpage', async (req, res) => {
 });
 
 // get all apartments in apartment collection
-router.get("/apartmentCollection/:id", async (req, res) => {
+router.get("/apartmentcollection/:id", async (req, res) => {
   try {
     const dbApartmentCollectionData = await ApartmentCollection.findByPk(req.params.id, {
       include: [
