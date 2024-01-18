@@ -27,7 +27,6 @@
 
                 <div id="prevComments" class="preComments">
 
-                    <h5>Sam{{apartment.comments}}</h5>
                     <ul>
                     {{#each apartment.comments}}
                     <li>{{ user.firstName }} says: {{text}}</li>
@@ -35,7 +34,11 @@
                     </ul>
                     <span></span>
                 </div>
-                <input id="addComment" class="addComment" placeholder="Add a comment...">
+                <form class="add-comment">
+                    <div class="form-card">
+                        <input class="form-input" type="text" placeholder="Add a comment.." id="comment"/>
+                    </div>
+                </form>
             </div>
         </div>
 

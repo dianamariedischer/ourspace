@@ -116,7 +116,7 @@ router.get("/apartmentCollection/:id", async (req, res) => {
               attributes: ['firstName']
             },
             { model: Comment,
-              attributes: ['text'],
+              attributes: ['id', 'text'],
               include: [
                 {
                   model: User,
