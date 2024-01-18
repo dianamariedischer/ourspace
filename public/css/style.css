@@ -465,6 +465,14 @@ p {
     background-color: var(--quatrinary);
     outline: none;
   }
+ 
+  #map-comment{
+    width: 95%;
+    margin-left: 20px;
+    border: none;
+    background-color: #f1ece7;
+    outline: none;
+  }
 
   #comment::placeholder {
     color: rgb(118, 118, 118);
