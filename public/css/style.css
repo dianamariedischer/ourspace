@@ -61,6 +61,7 @@
   
   main {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-grow: 1;
   }
@@ -130,11 +131,13 @@
   /* CARDS */
   .card {
     margin: 20px;
+    height: fit-content;
     flex: 0 1 300px;
     border: 7px double var(--dark);
     border-radius: 10px;
     background-color: var(--light);
     color: var(--dark);
+    overflow: hidden;
   }
   
   .login-card {
@@ -178,12 +181,12 @@
     padding-left: 100px;
   }
 
-/* Apartment form CARD */
+/* Apartment form */
 
 .apartment-form {
 margin: auto;
 width: 50%;
-padding: 20px;
+padding: 20px 40px;
 border: 3px solid var(--dark);
 border-radius: var(--border-radius);
 border-style: double;
@@ -192,24 +195,23 @@ background-color: var(--light);
 color: var(--dark);
 }
 
-  .detail-card {
+
+.detail-card {
     display: flex;
     align-items: baseline;
     margin: 2.5rem 0;
-  }
+}
 
-  .detail-input {
+.detail-input {
     border-color: #1a1a1a;
     margin: auto;
     width: 8rem;
     height: 45px;
     border-radius: 4px;
-  }
+}
 
   input[type=text] {
-    /* width: 100%; */
     padding: 12px 20px;
-    /* margin: 8px 0; */
     box-sizing: border-box;
     border: 1px solid #1a1a1a;
     border-radius: 4px;
@@ -348,8 +350,17 @@ color: var(--dark);
     margin: 20px 20px;
     padding: 20px;
     width: 100%;
-
   }
+
+.row {
+  background-color: #D5E08D;
+}
+
+.info-col {
+  margin: 0 45px;
+}
+
+
 
   .preComments {
     background-color: #f1ece7;
@@ -384,3 +395,6 @@ color: var(--dark);
   #address {
     margin: 20px;
   }
+
+  /* Apartment page */
+
