@@ -393,7 +393,11 @@ color: var(--dark);
   margin: 0 45px;
 }
 
-
+p {
+  font-size: 1.1rem;
+  margin: 1rem;
+  line-height: 1.5;
+}
 
   .preComments {
     background-color: #f1ece7;
@@ -432,7 +436,7 @@ color: var(--dark);
 
   #comment {
     width: 95%;
-    margin-left: 20px;
+    margin-left: 8px;
     border: none;
     background-color: #f1ece7;
     outline: none;
