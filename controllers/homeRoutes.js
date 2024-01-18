@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 
     } else {
       res.render("homepage", {
-        loggedIn: req.session.loggedIn,
+        //loggedIn: req.session.loggedIn,
       });
     }
   } catch (err) {
