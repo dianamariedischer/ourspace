@@ -5,28 +5,27 @@ L.Control.geocoder().addTo(map);// This is needed to search locations
 
 
 var myIcon = L.icon({
-    iconUrl: '/images/ourspace.png',
-    iconSize: [75, 75],
-    iconAnchor: [21, 75],
-    popupAnchor: [-3, -76],
+  iconUrl: '/images/ourspace.png',
+  iconSize: [75, 75],
+  iconAnchor: [21, 75],
+  popupAnchor: [-3, -76],
 });
 
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
 
-
+// Copy Address Function
 function addCopy() {
   // Get the text field
   var copyText = document.getElementById("s_address");
   // Select the text field
-  copyText.select();
+  // copyText.select();
+  console.log(copyText.innerText);
   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  navigator.clipboard.writeText(copyText.innerText);
 }
 
