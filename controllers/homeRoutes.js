@@ -47,17 +47,6 @@ router.get("/signup", (req, res) => {
 // if user is logged in, get all apartment collections that belong to user for landing page
 router.get('/landingpage', async (req, res) => {
   try {
-    const dbApartmentCollectionData = await ApartmentCollection.findAll({
-      where: {
-        user_id: req.session.userId
-      }
-    });
-
-    console.log(dbApartmentCollectionData);
-
-    const collections = dbApartmentCollectionData.map((collection) =>
-      collection.get({ plain: true })
-    );
 
     const userData = await User.findByPk(req.session.userId, {
       attributes: ['first_name'],
