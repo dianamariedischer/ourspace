@@ -330,7 +330,7 @@ color: var(--dark);
     border: 1px solid black;
   }
 
-  .aptbuttons {
+  /* .aptbuttons {
     margin: 2% 30%;
     justify-content: center;
     text-align: center;
@@ -341,9 +341,9 @@ color: var(--dark);
     font-weight: bold;
     width: 175px;
     border: none;
-  }
+  } */
 
-  .copyBtn {
+  .copyBtn, .aptbuttons {
   background-color: #ca673b;
   border: none;
   color: white;
@@ -357,9 +357,17 @@ color: var(--dark);
   text-decoration: none;
   cursor: pointer;
   border-radius: 10px;
+  box-shadow: 0 3px #999;
   }
 
-  .copyBtn:hover {opacity: 1}
+  .copyBtn:hover, .aptbuttons:hover {opacity: 1}
+
+  .copyBtn:active, .aptbuttons:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(9px);
+  }
+
 
   ul.apt {
     list-style: none;
@@ -372,11 +380,13 @@ color: var(--dark);
     background-color: #f3f4d9;
     margin: 20px 20px;
     padding: 20px;
-    width: 100%;
+    width: 95%;
+    border-radius: 5px;
   }
 
 .row {
   background-color: #D5E08D;
+  border-radius: 5px;
 }
 
 .info-col {
@@ -388,11 +398,11 @@ color: var(--dark);
   .preComments {
     background-color: #f1ece7;
     margin: 20px;
-    padding: 25px;
+    padding: 25px 25px 0px 25px;
     border-radius: 5px;
     margin: 5px 20px;
     height: 150px;
-    width: 100%;
+    width: 95%;
   }
 
   .addComment {
@@ -408,8 +418,8 @@ color: var(--dark);
   #map{
     border: 1px solid black;
     width: 500px;
-    height: 500px;
-    margin-top: 25px;
+    height: 455px;
+    margin-top: 190px;
   }
 
   #aptCont {
@@ -418,6 +428,18 @@ color: var(--dark);
 
   #address {
     margin: 20px;
+  }
+
+  #comment {
+    width: 95%;
+    margin-left: 20px;
+    border: none;
+    background-color: #f1ece7;
+    outline: none;
+  }
+
+  #postButton {
+    margin: 0px 0px 50px 20px;
   }
 
   /* Apartment page */
