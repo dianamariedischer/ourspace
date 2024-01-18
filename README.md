@@ -5,10 +5,8 @@ An organizer that stores apartment search data, making it easy to compare listin
 
 ## Table of Contents
 [Description](#description)<br>
-[Installation](#installation)<br>
 [Usage](#usage)<br>
 [Contributing](#contributing)<br>
-[Tests](#tests)<br>
 [License Link](#license-link)<br>
 [License Description](#license-description)<br>
 [Questions](#questions)
@@ -16,23 +14,18 @@ An organizer that stores apartment search data, making it easy to compare listin
 ## Description
 ourspace is a user friendly site that allows users to save apartment listings after searching the web. Find the perfect home by building a collection and collaborating with friends and roommates. Stop sharing links via email and text message and use ourspace to make the search process fun and easy.  
 
-## Installation
-Download the repository to your local machine 
-
 ## Usage 
 1. Sign up for an account or login.
 2. After logging in search saved apartments.
 3. Create new records based off your external searches.
 4. Created collections based on your own preferences.
+5. Find your dream home!
     
 ## Contributing 
 1. Diana Discher
 2. Lisa Lar
 3. Nick Settembrino
 4. Steve Pritchard
-    
-## Tests
-No no tests.
 
 ## License Link
 https://www.mit.edu/~amini/LICENSE.md
