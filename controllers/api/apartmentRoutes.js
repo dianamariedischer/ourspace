@@ -3,6 +3,7 @@ const { Apartment } = require("../../models");
 
 //router.post("/apartment", withAuth, async (req, res) => {
 router.post("/", async (req, res) => {
+<<<<<<< Updated upstream
   try {
     const newApartment = await Apartment.create({
       imagelink: req.body.imageLink,
@@ -18,6 +19,12 @@ router.post("/", async (req, res) => {
       notes: req.body.notes,
       link: req.body.link,
       apartment_collection_id: req.body.apartment_collection_id,
+=======
+  console.log(...req.body);
+  try {
+    const newApartment = await Apartment.create({
+      ...req.body,
+>>>>>>> Stashed changes
       user_id: req.session.userId,
     });
 
