@@ -1,4 +1,5 @@
 {{#if loggedIn}}
+<section class="flex-row justify-center">
 {{#each collections as |collection| }}
 <section class="card">
   <a href="/apartmentcollection/{{id}}">
@@ -13,6 +14,8 @@
     <a href="/collectionForm">Add collection</a>
   </div>
 </div>
+</section>
+
 {{else}}
 <p class="m-auto">Please <a href="/login">log in</a> or <a href="/signup">create an account</a> to view this page.</p>
 {{/if}}

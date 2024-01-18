@@ -2,7 +2,7 @@
     --primary: #D5E08D;
     --secondary: #CAD870;
     --tertiary: #C9673A;
-    --quatrinary: #753d23;
+    --quatrinary: #f4ece4;
     --light: #FEFCFA;
     --dark: #1E1408;
     --error: rgb(228, 46, 1);
@@ -27,6 +27,18 @@
   h2 {
     font-family: 'Lora', serif;
     font-size: 60px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-family: 'Lora', serif;
+    font-size: 18px;
     font-weight: 400;
   }
   
@@ -133,11 +145,22 @@
     margin: 20px;
     height: fit-content;
     flex: 0 1 300px;
-    border: 7px double var(--dark);
     border-radius: 10px;
-    background-color: var(--light);
+    background-color: #f4f4dc;
+    border: none;
     color: var(--dark);
     overflow: hidden;
+    padding: 1rem;
+  }
+
+  .card .description {
+    text-align: center;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .card img {
+    border-radius: 3px;
   }
   
   .login-card {
@@ -155,31 +178,19 @@
   }
   
   .card header {
-    color: var(--light);
-    font-weight: bold;
-    text-transform: uppercase;
+    color: var(--dark);
+    font-family: 'Lora', serif;
+    font-size: 20px;
     margin: 0;
-    background-color: var(--tertiary);
-    padding: 0.625rem;
-    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+    padding-bottom: 15px;
+    background-color: #f4f4dc;
+    box-shadow: 0px 0px 0px 0px rgba(30, 20, 8, 0.20);
   }
   
   .card-body {
     font-size: 1.4rem;
-    text-align: center;
-    font-weight: bold;
   }
   
-  .gallery-name {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px var(--secondary);
-    border: 10px groove var(--light);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 100px;
-    padding-left: 100px;
-  }
 
 /* Apartment form */
 
@@ -322,13 +333,13 @@ color: var(--dark);
 
   /* apartment handlebar */
 
-  .aptCard {
+  /* .aptCard {
     background-color: white;
     margin: 20px 20px;
     width: 75%;
     margin: auto;
     border: 1px solid black;
-  }
+  } */
 
   /* .aptbuttons {
     margin: 2% 30%;
@@ -399,6 +410,21 @@ p {
   line-height: 1.5;
 }
 
+.comment {
+  background-color: var(--quatrinary);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.comment h4 {
+  padding: 0px;
+}
+
+.comment p {
+  margin: 0;
+}
+
   .preComments {
     background-color: #f1ece7;
     margin: 20px;
@@ -435,19 +461,13 @@ p {
   }
 
   #comment {
-    width: 95%;
-    margin-left: 7px;
     border: none;
-    background-color: #f1ece7;
+    background-color: var(--quatrinary);
     outline: none;
   }
 
-  #map-comment{
-    width: 95%;
-    margin-left: 20px;
-    border: none;
-    background-color: #f1ece7;
-    outline: none;
+  #comment::placeholder {
+    color: rgb(118, 118, 118);
   }
 
   #postButton {
@@ -455,3 +475,15 @@ p {
   }
 
 
+  #rating {
+    color: var(--tertiary)
+  }
+
+  #logout {
+    border: none;
+    background-color: var(--light);
+  }
+
+  #logout:hover {
+    color: var(--secondary);
+  }

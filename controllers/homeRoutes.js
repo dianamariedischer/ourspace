@@ -95,6 +95,7 @@ router.get('/landingpage', async (req, res) => {
 router.get("/apartmentcollection/:id", async (req, res) => {
   try {
     const dbApartmentCollectionData = await ApartmentCollection.findByPk(req.params.id, {
+      attributes: ['title'],
       include: [
         {
           model: Apartment,
