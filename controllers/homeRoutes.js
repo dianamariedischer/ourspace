@@ -47,8 +47,6 @@ router.get("/signup", (req, res) => {
 // if user is logged in, get all apartment collections that belong to user for landing page
 router.get('/landingpage', async (req, res) => {
   try {
-<<<<<<< Updated upstream
-=======
     const dbApartmentCollectionData = await ApartmentCollection.findAll({
       where: {
         user_id: req.session.userId
@@ -60,7 +58,6 @@ router.get('/landingpage', async (req, res) => {
     const collections = dbApartmentCollectionData.map((collection) =>
       collection.get({ plain: true })
     );
->>>>>>> Stashed changes
 
     const userData = await User.findByPk(req.session.userId, {
       attributes: ['first_name'],
@@ -112,7 +109,6 @@ router.get("/apartmentCollection/:id", async (req, res) => {
       include: [
         {
           model: Apartment,
-<<<<<<< Updated upstream
 
           include: [
             { 
@@ -128,26 +124,6 @@ router.get("/apartmentCollection/:id", async (req, res) => {
                 }
               ]
             }]
-=======
-          attributes: [
-            'id',
-            'filename',
-            'address1',
-            'date_added',
-            'rent',
-            'beds',
-            'baths',
-            'rating',
-            'notes',
-            'user_id'
-          ],
-          include: [
-            {
-              model: User,
-              attributes: ['firstName']
-            }
-          ]
->>>>>>> Stashed changes
         },
       ],
     });
