@@ -1,14 +1,13 @@
+<div class="apartment">
+    <div id="address">
+        <!-- The button used to copy the text -->
+        <h4 id="s_address">{{apartment.address1}} {{apartment.address2}}<br>{{apartment.city}}, {{apartment.state}} {{apartment.zip}}</h4>
+        <p>Added by: {{apartment.user.firstName}} on {{ format_date apartment.date_added }}</p>
+        <button class="copyBtn" onclick="addCopy()">Copy Address</button>
+    </div>
+    <div class ="flex-row w-100 justify-center">
+        <div class="col-auto justify-center mb-3">
 
-<div id='aptCont' class="container">
-    <div class ="row w-100">
-        <div class="col-6">
-
-            <div id="address">
-                <!-- The button used to copy the text -->
-                <h4 id="s_address">{{apartment.address1}} {{apartment.address2}}<br>{{apartment.city}}, {{apartment.state}} {{apartment.zip}}</h4>
-                <p>Added by: {{apartment.user.firstName}} on {{ format_date apartment.date_added }}</p>
-                <button class="copyBtn" onclick="addCopy()">Copy Address</button>
-            </div>
             <div id="card" class="aptDetails">
                 <div id="details">
                     <ul class="apt">
@@ -43,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col">
 
             <div id="map">Map Goes Here
             </div>

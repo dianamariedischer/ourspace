@@ -105,16 +105,6 @@
     color: var(--primary);
   }
   
-  .container {
-    flex: 4;
-    background-color: #fff;
-    padding: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .btn-no-style {
     background: none;
     border: none;
@@ -390,7 +380,7 @@
   padding: 8px 32px;
   text-align: center;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 0;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
@@ -417,16 +407,16 @@
   }
 
   .aptDetails {
-    background-color: #f3f4d9;
-    margin: 20px 20px;
+    background-color: var(--quatrinary);
     padding: 20px;
-    width: 95%;
     border-radius: 5px;
   }
 
-.row {
+.apartment {
   background-color: #D5E08D;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  margin: 40px 20px;
+  padding-bottom: 30px;
 }
 
 .info-col {
@@ -455,38 +445,35 @@ p {
 }
 
   .preComments {
-    background-color: #f1ece7;
-    margin: 20px;
+    background-color: var(--quatrinary);
     padding: 25px 25px 0px 25px;
     border-radius: 5px;
-    margin: 5px 20px;
     height: 150px;
-    width: 95%;
   }
 
   .addComment {
-    background-color: #f1ece7;
+    background-color: var(--quatrinary);
     padding: 25px;
     border-radius: 5px;
     margin: 5px 20px;
     border: none;
     height: 30px;
-    width: 100%;
+    margin-left: 40px;
   }
 
   #map{
     border: 1px solid black;
-    width: 500px;
-    height: 455px;
-    margin-top: 190px;
-  }
-
-  #aptCont {
-    margin: 20px auto;
+    width: 400px;
+    height: 430px;
+    margin-right: 20px;
   }
 
   #address {
-    margin: 20px;
+    margin: 20px 20px;
+  }
+
+  #address > p {
+    margin: 0;
   }
 
   #comment {
@@ -494,10 +481,9 @@ p {
     background-color: var(--quatrinary);
     outline: none;
   }
+
  
   #map-comment{
-    width: 95%;
-    margin-left: 20px;
     border: none;
     background-color: #f1ece7;
     outline: none;
@@ -507,10 +493,6 @@ p {
     color: rgb(118, 118, 118);
   }
 
-  #postButton {
-    margin: 0px 0px 50px 20px;
-  }
-
 
   #rating {
     color: var(--tertiary)
@@ -518,6 +500,7 @@ p {
 
   #logout {
     border: none;
+    padding: 0;
     background-color: transparent;
   }
 
