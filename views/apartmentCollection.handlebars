@@ -7,20 +7,30 @@
 {{#if loggedIn}}
 <section class="flex-row justify-center">
     {{#each collection.apartments as |apartment|}}
-    <section class="card">
+    <section class="card" id="{{@index}}">
     <a href="/apartment/{{id}}">
     <header>{{address1}}, {{address2}} <br> {{city}}, {{state}}, {{zip}} </header>
 
     <div class="card-body">
-      <img src="{{imagelink}}" alt="{{description}}">
-      <p>Added by: {{user.firstName}} on {{ format_date date_added }}</p>
+      <img src="{{ imagelink }}" alt="{{ address1 }}">
+      <p>Added by: {{ user.firstName }} on {{ format_date date_added }}</p>
       <p id="rating">Rating: {{ rating }}</p>
       <p>{{beds}} bed / {{baths}} bath <br>
-        Rent: ${{rent}} <br>
-        Notes: {{notes}}
+        Rent: ${{ rent }} <br>
+        Notes: {{ notes }}
       </p>
     </div>
   </a>
+  <ul>
+  {{#each comments}}
+  <li>{{ user.firstName }} says: {{ text }}</li>
+  {{/each}}
+  </ul>
+  <form class="add-comment">
+    <div class="form-card">
+      <input class="form-input" type="text" placeholder="Add a comment.." id="comment"/>
+    </div>
+  </form>
 </section>
     {{/each}}
 </section>
@@ -38,5 +48,5 @@
 
 {{/if}}
 
-
-<script src="/controllers/api/apartmentCollectionRoutes.js"></script>
+<script src="/js/comment.js"></script>
+{{!-- <script src="/controllers/api/apartmentCollectionRoutes.js"></script> --}}

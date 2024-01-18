@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, ApartmentCollection, Apartment } = require("../models");
+const { User, ApartmentCollection, Apartment, Comment } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -47,6 +47,17 @@ router.get("/signup", (req, res) => {
 // if user is logged in, get all apartment collections that belong to user for landing page
 router.get('/landingpage', async (req, res) => {
   try {
+    const dbApartmentCollectionData = await ApartmentCollection.findAll({
+      where: {
+        user_id: req.session.userId
+      }
+    });
+
+    console.log(dbApartmentCollectionData);
+
+    const collections = dbApartmentCollectionData.map((collection) =>
+      collection.get({ plain: true })
+    );
 
     const userData = await User.findByPk(req.session.userId, {
       attributes: ['first_name'],
@@ -98,28 +109,21 @@ router.get("/apartmentCollection/:id", async (req, res) => {
       include: [
         {
           model: Apartment,
-          attributes: [
-            'id',
-            'imagelink',
-            'address1',
-            'address2',
-            'city',
-            'state',
-            'zip',
-            'date_added',
-            'rent',
-            'beds',
-            'baths',
-            'rating',
-            'notes',
-            'user_id'
-          ],
+
           include: [
-            {
+            { 
               model: User,
               attributes: ['firstName']
-            }
-          ]
+            },
+            { model: Comment,
+              attributes: ['text'],
+              include: [
+                {
+                  model: User,
+                  attributes: ['firstName']
+                }
+              ]
+            }]
         },
       ],
     });
@@ -135,7 +139,7 @@ router.get("/apartmentCollection/:id", async (req, res) => {
       res.render("apartmentCollection", {
         collection,
         loggedIn: req.session.loggedIn,
-        name: user.first_name
+        name: user.first_name,
       });
 
     } else {
@@ -152,7 +156,23 @@ router.get("/apartmentCollection/:id", async (req, res) => {
 // get individual apartment
 router.get("/apartment/:id", async (req, res) => {
   try {
-    const dbApartmentData = await Apartment.findByPk(req.params.id);
+    const dbApartmentData = await Apartment.findByPk(req.params.id, {
+      include: [{ 
+        model: User,
+        attributes: ['firstName']
+      },
+      { model: Comment,
+        attributes: ['text'],
+        include: [
+          {
+            model: User,
+            attributes: ['firstName']
+          }
+        ]
+      }]
+    });
+
+    console.log(dbApartmentData)
 
     const apartment = dbApartmentData.get({ plain: true });
     

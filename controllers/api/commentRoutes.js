@@ -1,13 +1,16 @@
 const router = require("express").Router();
-const { Comment } = require("../../models/Comment");
+const { Comment } = require("../../models");
 
 //router.post("/comment", withAuth, async (req, res) => {
-router.post("/comment", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newComment = await Comment.create({
-      ...req.body,
-      user_id: req.session.user_id,
+      text: req.body.text,
+      apartment_id: req.body.apartment_id,
+      user_id: req.session.userId,
     });
+
+    console.log(newComment)
 
     res.status(200).json(newComment);
   } catch (err) {
@@ -15,7 +18,7 @@ router.post("/comment", async (req, res) => {
   }
 });
 
-router.get("/comment", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbCommentData = await Comment.findByPk(req.params.id, {
       include: [
