@@ -6,7 +6,13 @@
     <img src="{{apartments.[0].imagelink}}" alt="{{apartments.[0].address1}}">
   </a>
 </section>
+
 {{/each}}
+<div class="buttons display-flex">
+  <div class="start-buttons">
+    <a href="/collectionForm">Add collection</a>
+  </div>
+</div>
 {{else}}
 <p class="m-auto">Please <a href="/login">log in</a> or <a href="/signup">create an account</a> to view this page.</p>
 {{/if}}
