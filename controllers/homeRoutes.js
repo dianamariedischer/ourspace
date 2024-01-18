@@ -125,14 +125,14 @@ router.get("/apartmentcollection/:id", async (req, res) => {
     if (userData) {
       const user = userData.get({ plain: true });
 
-      res.render("apartmentCollection", {
+      res.render("apartmentcollection", {
         collection,
         loggedIn: req.session.loggedIn,
         name: user.first_name,
       });
 
     } else {
-      res.render("apartmentCollection", {
+      res.render("apartmentcollection", {
         loggedIn: req.session.loggedIn,
       });
     }
