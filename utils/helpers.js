@@ -1,8 +1,9 @@
 module.exports = {
     format_date: (date) => {
-      return `${new Date(date).getMonth()}/${new Date(date).getDate()}/${
+      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
         new Date(date).getFullYear()
-      }` + " at " + date.toLocaleTimeString();
+      }` + " at " + date.toLocaleTimeString([], {
+        timeStyle: 'short'});
     },
     sort: (arr) => {
       return arr.sort((a, b) => {
