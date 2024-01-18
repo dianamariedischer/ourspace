@@ -19,6 +19,7 @@ ourspace is a user friendly site that allows users to save apartment listings af
 2. After logging in search saved apartments.
 3. Create new records based off your external searches.
 4. Created collections based on your own preferences.
+5. Find your dream home!
     
 ## Contributing 
 1. Diana Discher
