@@ -32,4 +32,12 @@ Comment.belongsTo(Apartment, {
   foreignKey: 'apartment_id'
 });
 
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
 module.exports = { User, ApartmentCollection, Apartment, Comment };

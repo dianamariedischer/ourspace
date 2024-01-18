@@ -15,7 +15,7 @@ router.post("/comment", async (req, res) => {
   }
 });
 
-router.get("/comment", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbCommentData = await Comment.findByPk(req.params.id, {
       include: [
