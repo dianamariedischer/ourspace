@@ -1,13 +1,13 @@
 
 <div id='aptCont' class="container" style="border: 1px solid black;">
-    <div class ="row">
-        <div class="col-6" style="border: 1px solid black;">
+    <div class ="row w-100">
+        <div class="col-6">
 
             <div id="address">
                 <!-- The button used to copy the text -->
                 <h4 id="s_address">{{apartment.address1}} {{apartment.address2}}<br>{{apartment.city}}, {{apartment.state}} {{apartment.zip}}</h4>
                 <p>Added by: {{apartment.user.firstName}} on {{ format_date apartment.date_added }}</p>
-                <button onclick="addCopy()">Copy Address</button>
+                <button class="copyBtn" onclick="addCopy()">Copy Address</button>
             </div>
             <div id="card" class="aptDetails">
                 <div id="details">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="col-6" style="border: 1px solid black;">
+        <div class="col-6">
 
             <div id="map">Map Goes Here
             </div>
