@@ -30,7 +30,7 @@ Apartment.init(
       allowNull: false,
     },
     zip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     date_added: {

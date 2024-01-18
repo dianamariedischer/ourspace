@@ -1,11 +1,11 @@
 const commentHandler = async (event) => {
     event.preventDefault();
+
     
-    const textElement = document.getElementById('comment');
-    const text = textElement.value.trim();
-    const apartment_id = textElement.parentElement.parentElement.parentElement.id + 1;
+    const text = document.querySelector('#comment').value.trim();
+    const apartment_id = window.location.pathname.slice(11);
   
-    if (text) {
+    if (text && apartment_id) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({ text, apartment_id }),
@@ -21,5 +21,5 @@ const commentHandler = async (event) => {
 };
 
 document
-    .querySelectorAll('.add-comment')
+    .querySelector('.add-comment')
     .addEventListener('submit', commentHandler);

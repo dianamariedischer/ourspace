@@ -4,7 +4,9 @@ module.exports = {
         new Date(date).getFullYear()
       }` + " at " + date.toLocaleTimeString();
     },
-    reverse: (arr) => {
-      return arr.reverse();
+    sort: (arr) => {
+      return arr.sort((a, b) => {
+        return a.id - b.id;
+    });
     }
   };
