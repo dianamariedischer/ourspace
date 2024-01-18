@@ -27,6 +27,20 @@ function addEventListenerList(list, event, fn) {
     }
 }
 
-var commentEl = document.querySelectorAll('.add-comment')
+const commentEl = document.querySelectorAll('.add-comment')
 addEventListenerList(commentEl, 'submit', commentHandler);
+
+const ratingNodeList = document.querySelectorAll('#rating');
+
+if (ratingNodeList) {
+    for (i = 0; i < ratingNodeList.length; i++) {
+        const rating = parseInt(ratingNodeList[i].innerHTML);
+        let stars = '' 
+        for (x = 0; x < rating; x++) {
+            stars = stars + '★';
+        }
+        ratingNodeList[i].innerHTML = stars;
+    }
+}
+
 
