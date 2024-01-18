@@ -139,12 +139,9 @@
   
   .login-card {
     margin: auto;
-    width: 50%; /* Adjust the width as needed */
-    /* padding: 20px; */
-    /* margin: 0 0 20px 0; */
+    width: 50%; 
     flex: 0 0 50%;
     max-width: 50%;
-    /* padding: 5px; */
     padding: 40px 40px 0 40px;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
@@ -181,6 +178,20 @@
     padding-left: 100px;
   }
 
+/* Apartment form CARD */
+
+.apartment-form {
+margin: auto;
+width: 50%;
+padding: 20px;
+border: 3px solid var(--dark);
+border-radius: var(--border-radius);
+border-style: double;
+border-width: thick;
+background-color: var(--light);
+color: var(--dark);
+}
+
   .detail-card {
     display: flex;
     align-items: baseline;
@@ -188,8 +199,19 @@
   }
 
   .detail-input {
+    border-color: #1a1a1a;
     margin: auto;
+    width: 8rem;
     height: 45px;
+    border-radius: 4px;
+  }
+
+  input[type=text] {
+    /* width: 100%; */
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    box-sizing: border-box;
+    border: 1px solid #1a1a1a;
     border-radius: 4px;
   }
 
@@ -257,7 +279,7 @@
 
   .btn.btn-primary {
     background-color: #D5E08D;
-    color: #d9e9e8;
+    color: black;
 }
 
 .btn.btn-primary:hover {
