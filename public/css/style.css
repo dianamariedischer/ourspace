@@ -184,6 +184,7 @@
 /* Apartment form */
 
 .apartment-form {
+
 margin: auto;
 width: 50%;
 padding: 20px 40px;
@@ -282,11 +283,13 @@ color: var(--dark);
   .btn.btn-primary {
     background-color: #D5E08D;
     color: black;
+
 }
 
 .btn.btn-primary:hover {
   background-color: #D5E08D;
 }
+
 
   .hamburger-button {
     cursor: pointer;
